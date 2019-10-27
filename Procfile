@@ -1,0 +1,1 @@
+web: java -jar build/libs/spoilers-1.0-SNAPSHOT.jar
