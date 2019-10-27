@@ -60,3 +60,6 @@ compileTestKotlin {
         freeCompilerArgs = ["-XXLanguage:+InlineClasses"]
     }
 }
+
+task stage(dependsOn: ['build', 'clean'])
+build.mustRunAfter clean
