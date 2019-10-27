@@ -32,7 +32,8 @@ class CardFormatterTests {
     fun formatSimpleCard() {
         val expected = "Plains \n" +
                 "Basic Land - Plains\n" +
-                "({T}: Add {W}.)"
+                "({T}: Add {W}.)\n" +
+                ""
         assertEquals(expected, basicPlains.formatAsString())
     }
 
@@ -40,7 +41,8 @@ class CardFormatterTests {
     fun `format plains with mana`() {
         val expected = "Plains \n" +
                 "Basic Land - Plains\n" +
-                "(:mana-t:: Add :mana-w:.)"
+                "(:mana-t:: Add :mana-w:.)\n" +
+                ""
         assertEquals(expected, basicPlains.formatManaCosts().formatAsString())
     }
 }
