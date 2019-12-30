@@ -54,3 +54,7 @@ dependencies {
 application {
     mainClassName = "com.zachtib.spoilers.MainKt"
 }
+
+task("stage") {
+    dependsOn("build")
+}
