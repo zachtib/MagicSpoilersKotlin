@@ -1,22 +1,18 @@
-object versions {
-    const val kotlin = "1.3.61"
-}
-
 buildscript {
     repositories {
         mavenCentral()
     }
 
     dependencies {
-        classpath(kotlin("gradle-plugin", version = versions.kotlin))
+        classpath(kotlin("gradle-plugin", version = "1.3.61"))
     }
 }
 
 
 plugins {
     application
-    kotlin("jvm") version versions.kotlin
-    kotlin("kapt") version versions.kotlin
+    kotlin("jvm") version "1.3.61"
+    kotlin("kapt") version "1.3.61"
 }
 
 repositories {
@@ -30,7 +26,7 @@ dependencies {
     val retrofit_version = "2.6.2"
     val okhttp_version = "4.2.1"
     val moshi_version = "1.8.0"
-    val kmongo_version = "3.11.1"
+    val jasync_sql_version = "1.0.12"
 
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version")
@@ -50,8 +46,7 @@ dependencies {
     implementation("com.squareup.moshi:moshi-kotlin:$moshi_version")
     kapt("com.squareup.moshi:moshi-kotlin-codegen:$moshi_version")
 
-    implementation("org.litote.kmongo:kmongo:$kmongo_version")
-    implementation("org.litote.kmongo:kmongo-coroutine:$kmongo_version")
+    implementation("com.github.jasync-sql:jasync-postgresql:$jasync_sql_version")
 
     testImplementation("junit:junit:4.12")
 }

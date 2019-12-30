@@ -8,7 +8,7 @@ import javax.inject.Singleton
 @Component(
     modules = [
         HttpModule::class,
-        MongoDbModule::class,
+        JasyncModule::class,
         LoggingModule::class,
         ScryfallModule::class,
         SlackModule::class
@@ -17,7 +17,7 @@ import javax.inject.Singleton
 interface AppComponent {
     @Component.Builder
     interface Builder {
-        fun mongo(module: MongoDbModule): Builder
+        fun jasync(module: JasyncModule): Builder
         fun logging(module: LoggingModule): Builder
 
         fun build(): AppComponent
